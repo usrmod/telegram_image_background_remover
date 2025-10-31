@@ -8,8 +8,8 @@ dependencies = [
     "fastapi[standard]>=0.120.0",
     "onnxruntime>=1.23.2",
     "pillow>=12.0.0",
+    "pymupdf>=1.26.5",
     "python-dotenv>=1.2.1",
     "python-telegram-bot>=22.5",
     "rembg>=2.0.67",
-    "yt-dlp>=2025.10.22",
 ]
