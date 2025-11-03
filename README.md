@@ -255,13 +255,6 @@ text
 
 This project is for portfolio demonstration purposes.
 
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Portfolio: [your-website.com](https://your-website.com)
-
 ## 🙏 Acknowledgments
 
 - **python-telegram-bot**: Excellent async bot framework
