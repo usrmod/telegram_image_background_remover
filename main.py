@@ -1,13 +1,35 @@
 import logging
 
+# logging.basicConfig(
+#     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+# )
+from logging.handlers import TimedRotatingFileHandler  # , RotatingFileHandler
+
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 
 from bot import echo, help_command, remove_bg, start, test
 from config import BOT_TOKEN
 
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+# # Create handler that rotates at 10MB, keeps 5 backups
+# handler = RotatingFileHandler(
+#     "bot.log",
+#     maxBytes=10 * 1024 * 1024,  # 10MB
+#     backupCount=5,
+# )
+
+# One log per day, file changes at midnight with the date in the file name
+handler = TimedRotatingFileHandler(
+    "bot.log",
+    when="midnight",
+    interval=1,
+    backupCount=7,  # Keep 7 days
 )
+handler.setFormatter(
+    logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+)
+
+logging.basicConfig(level=logging.INFO, handlers=[handler])
+# logging.basicConfig(level=logging.INFO, handlers=[handler, logging.StreamHandler()]) # for console as well
 
 
 def main():
